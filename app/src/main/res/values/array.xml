@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="nacionalidad">
+        <item></item>
+        <item>España</item>
+        <item>Italia</item>
+        <item>Mexico</item>
+        <item>Chile</item>
+    </string-array>
+    <string-array name="fabricante">
+        <item></item>
+        <item>Ferrari</item>
+        <item>Renault</item>
+        <item>Porsche</item>
+        <item>Chevrolet</item>
+        <item>Lamborghini</item>
+    </string-array>
+</resources>
