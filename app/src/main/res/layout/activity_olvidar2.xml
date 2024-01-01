@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="Registro.ActivityOlvidar">
+    tools:context="Registro.ActivityOlvidar2">
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
@@ -34,7 +34,7 @@
         app:layout_constraintGuide_percent="0.8" />
 
     <ImageView
-        android:id="@+id/back_btn"
+        android:id="@+id/back_btn1"
         android:layout_width="30dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
@@ -47,35 +47,35 @@
         app:layout_constraintVertical_bias="0.422" />
 
     <TextView
-        android:id="@+id/tvOlvidar2"
+        android:id="@+id/tvOlvidar3"
         android:layout_width="200dp"
         android:layout_height="20dp"
-        android:gravity="center"
         android:text="@string/Olvidar"
         android:textColor="@color/azul"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.37"
-        app:layout_constraintStart_toEndOf="@+id/back_btn"
+        app:layout_constraintStart_toEndOf="@+id/back_btn1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.448"
         tools:ignore="MissingConstraints" />
-
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:passwordToggleEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline"
         tools:ignore="MissingConstraints">
         <EditText
-            android:id="@+id/editTextMail"
+            android:id="@+id/editContra1"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:ems="10"
-            android:hint="@string/Mail"
-            android:inputType="text"
+            android:hint="@string/Contrasena"
+            android:inputType="textPassword"
             android:text=""
             app:layout_constraintBottom_toTopOf="@+id/guideline2"
             app:layout_constraintEnd_toEndOf="parent"
@@ -89,6 +89,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,24 +98,30 @@
 
 
         <EditText
-            android:id="@+id/editTextMail2"
+            android:id="@+id/editTextContra"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:ems="10"
-            android:hint="@string/RepMail"
-            android:inputType="text"
+            android:hint="@string/RepContra"
+            android:inputType="textPassword"
             android:text=""
-            app:layout_constraintBottom_toTopOf="@+id/guideline2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline"
-            app:layout_constraintVertical_bias="0.54"
             tools:ignore="MissingConstraints" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/tvTexto"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text=""
+        android:textColor="@color/azul"
+        app:layout_constraintBottom_toTopOf="@+id/buttonEnviar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        tools:ignore="MissingConstraints" />
+
     <Button
-        android:id="@+id/buttonEnviar"
+        android:id="@+id/buttonEnviar2"
         android:layout_width="218dp"
         android:layout_height="48dp"
         android:backgroundTint="@color/gris"
@@ -127,7 +134,5 @@
         app:layout_constraintVertical_bias="0.53"
         app:strokeColor="@color/gris"
         tools:ignore="MissingConstraints" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.proyectofinalm13;
+package Registro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.proyectofinalm13.R;
 
 public class MainActivity extends AppCompatActivity {
     private EditText etUsuario, etContraseña;
@@ -77,15 +79,15 @@ public class MainActivity extends AppCompatActivity {
     }
     //Abrir el activity de registro
     private void abrirActivityRegistro() {
-        Intent intent_JGG = new Intent(this, ActivityRegistro.class);
-        startActivity(intent_JGG);
+        Intent intent = new Intent(this, ActivityRegistro.class);
+        startActivity(intent);
         finish();
 
     }
     //enviar a la pantalla de olvidar contraseña
     private void abrirActivityOlvidar() {
-        Intent intent_JGG = new Intent(this, ActivityOlvidar.class);
-        startActivity(intent_JGG);
+        Intent intent = new Intent(this, ActivityOlvidar.class);
+        startActivity(intent);
         finish();
 
     }
