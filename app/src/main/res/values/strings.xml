@@ -1,8 +1,25 @@
 <resources>
     <string name="app_name">ProyectoFinalM13</string>
     <string name="Usuario">Usuario</string>
-    <string name="Contrasena">Contrasena</string>
+    <string name="Contrasena">Contraseña</string>
+    <string name="RepContra">Repite Contraseña</string>
+    <string name="Nombre">Nombre</string>
+    <string name="Apellidos">Apellidos</string>
+    <string name="Mail">Correo Electrónico</string>
+    <string name="RepMail">Repite Correo Electrónico</string>
     <string name="Login">Login</string>
+    <string name="Enviar">Enviar</string>
     <string name="Olvidar">¿Has olvidado tu contraseña?</string>
     <string name="Registro">Registrarse</string>
+    <string name="Genero">Género</string>
+    <string name="IUsuario">Introduce usuario</string>
+    <string name="IContra">Introduce contraseña</string>
+    <string name="MContra">Minimo 4 caracteres,máximo 10</string>
+    <string name="MUsuario">Minimo 4 caracteres,máximo 15</string>
+    <string name="RBien">Te has registrado de manera satisfactoria</string>
+    <string name="RLogin">Haz click aquí para ir al login</string>
+    <string name="Masculino">Masculino</string>
+    <string name="Femenino">Femenino</string>
+    <string name="NBinario">No Binario</string>
+    <string name="YCuenta">¿Ya tienes una cuenta?</string>
 </resources>

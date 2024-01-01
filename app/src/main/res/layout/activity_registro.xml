@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityRegistro">
+    tools:context="Registro.ActivityRegistro">
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -18,51 +18,224 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="ExtraText">
-        <EditText
-            android:id="@+id/editNombre"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TiNombre"
             android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:ems="10"
-            android:hint="@string/Contrasena"
-            android:inputType="textPassword"
-            android:text=""
-            tools:ignore="MissingConstraints" />
-        <EditText
-            android:id="@+id/editApellidos"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/azul"
+            app:boxStrokeColor="@color/azul"
+            app:errorEnabled="true"
+            app:helperTextEnabled="true"
+            app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:helperTextTextColor="@color/azul"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/editNombre"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:hint="@string/Nombre"
+                android:inputType="text|textPersonName"
+                android:digits="qwertzuiopasdfghjklyxcvbnmñ,QWERTZUIOPASDFGHJKLYXCVBNMÑ"
+                android:text=""
+                tools:ignore="MissingConstraints" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TiApellidos"
             android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:ems="10"
-            android:hint="@string/Contrasena"
-            android:inputType="textPassword"
-            android:text=""
-            tools:ignore="MissingConstraints" />
-        <EditText
-            android:id="@+id/editUsuario"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/azul"
+            app:boxStrokeColor="@color/azul"
+            app:errorEnabled="true"
+            app:helperTextEnabled="true"
+            app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:helperTextTextColor="@color/azul"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/editApellidos"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:hint="@string/Apellidos"
+                android:inputType="text|textPersonName"
+                android:digits="qwertzuiopasdfghjklyxcvbnmñ,QWERTZUIOPASDFGHJKLYXCVBNMÑ"
+                android:text=""
+                tools:ignore="MissingConstraints" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TiUsuario2"
             android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:ems="10"
-            android:hint="@string/Contrasena"
-            android:inputType="textPassword"
-            android:text=""
-            tools:ignore="MissingConstraints" />
-        <EditText
-            android:id="@+id/editMail"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/azul"
+            app:boxStrokeColor="@color/azul"
+            app:errorEnabled="true"
+            app:helperText="@string/MUsuario"
+            app:helperTextEnabled="true"
+            app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:helperTextTextColor="@color/azul"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/editUsuario"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:hint="@string/Usuario"
+                android:digits="0,1,2,3,4,5,6,7,8,9,qwertzuiopasdfghjklyxcvbnmñ,QWERTZUIOPASDFGHJKLYXCVBNMÑ,@-_"
+                android:text=""
+                tools:ignore="MissingConstraints" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TiMail"
             android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:ems="10"
-            android:hint="@string/Contrasena"
-            android:inputType="textPassword"
-            android:text=""
-            tools:ignore="MissingConstraints" />
-        <EditText
-            android:id="@+id/editTextContra"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/azul"
+            app:boxStrokeColor="@color/azul"
+            app:errorEnabled="true"
+            app:helperTextEnabled="true"
+            app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:helperTextTextColor="@color/azul"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            tools:ignore="MissingConstraints">
+            <EditText
+                android:id="@+id/editMail"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:hint="@string/Mail"
+                android:text=""
+                tools:ignore="MissingConstraints" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TiContra1"
             android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:ems="10"
-            android:hint="@string/Contrasena"
-            android:inputType="textPassword"
-            android:text=""
-            tools:ignore="MissingConstraints" />
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/azul"
+            app:boxStrokeColor="@color/azul"
+            app:errorEnabled="true"
+            app:helperText="@string/MContra"
+            app:helperTextEnabled="true"
+            app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:helperTextTextColor="@color/azul"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/azul"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/editTextContraseña"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:hint="@string/Contrasena"
+                android:inputType="textPassword"
+                android:text=""
+                tools:ignore="MissingConstraints" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TiRepContra"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/azul"
+            app:boxStrokeColor="@color/azul"
+            app:errorEnabled="true"
+            app:helperTextEnabled="true"
+            app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:helperTextTextColor="@color/azul"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/azul"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/editTextContraseñaRepetir"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:hint="@string/RepContra"
+                android:inputType="textPassword"
+                android:text=""
+                tools:ignore="MissingConstraints" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ExtraText">
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="4"
+                android:text="@string/Genero" />
+
+            <RadioButton
+                android:id="@+id/RadioM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Masculino" />
+
+            <RadioButton
+                android:id="@+id/RadioF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Femenino" />
+
+            <RadioButton
+                android:id="@+id/RadioN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/NBinario" />
+
+        </RadioGroup>
+        <![CDATA[
+
+        />
+
+    ]]>
+    </LinearLayout>
         <Spinner
             android:id="@+id/spinnerNacionalidad"
             android:layout_width="wrap_content"
@@ -87,32 +260,26 @@
             app:layout_constraintHorizontal_bias="0.511"
             app:layout_constraintVertical_bias="0.471"
             tools:ignore="MissingConstraints" />
-        <EditText
-            android:id="@+id/editNacionalidad"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:ems="10"
-            android:hint="@string/Contrasena"
-            android:inputType="textPassword"
-            android:text=""
-            tools:ignore="MissingConstraints" />
-        <EditText
-            android:id="@+id/editTextContra"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:ems="10"
-            android:hint="@string/Contrasena"
-            android:inputType="textPassword"
-            android:text=""
-            tools:ignore="MissingConstraints" />
+
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/buttonEnviar"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginLeft="150dp"
-            android:text="Atrás"
-            android:backgroundTint="@color/gris"
-            android:textColor="@color/black" />
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/azul"
+            android:text="@string/Enviar"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/buttonCuenta"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="230dp"
+            android:backgroundTint="@color/azul"
+            android:text="@string/YCuenta"
+            android:textColor="@color/white" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
