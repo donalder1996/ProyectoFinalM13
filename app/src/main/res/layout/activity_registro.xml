@@ -18,30 +18,37 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="ExtraText">
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/TiNombre"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:textColorHint="@color/azul"
             app:boxStrokeColor="@color/azul"
+            app:counterTextColor="@color/azul"
             app:errorEnabled="true"
             app:helperTextEnabled="true"
             app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Body1"
             app:helperTextTextColor="@color/azul"
+            app:hintTextColor="@color/azul"
             app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:placeholderTextColor="@color/azul"
+            app:prefixTextColor="@color/azul"
+            app:startIconTint="@color/azul"
+            app:suffixTextColor="@color/azul"
             tools:ignore="MissingConstraints">
 
             <EditText
                 android:id="@+id/editNombre"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
+                android:digits="qwertzuiopasdfghjklyxcvbnmñ,QWERTZUIOPASDFGHJKLYXCVBNMÑ"
                 android:ems="10"
                 android:hint="@string/Nombre"
                 android:inputType="text|textPersonName"
-                android:digits="qwertzuiopasdfghjklyxcvbnmñ,QWERTZUIOPASDFGHJKLYXCVBNMÑ"
                 android:text=""
                 tools:ignore="MissingConstraints" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -52,24 +59,28 @@
             android:layout_height="wrap_content"
             android:textColorHint="@color/azul"
             app:boxStrokeColor="@color/azul"
+            app:counterTextColor="@color/azul"
             app:errorEnabled="true"
             app:helperTextEnabled="true"
             app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Body1"
             app:helperTextTextColor="@color/azul"
+            app:hintTextColor="@color/azul"
             app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:prefixTextColor="@color/azul"
+            app:startIconTint="@color/azul"
             tools:ignore="MissingConstraints">
 
             <EditText
                 android:id="@+id/editApellidos"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
+                android:digits="qwertzuiopasdfghjklyxcvbnmñ,QWERTZUIOPASDFGHJKLYXCVBNMÑ"
                 android:ems="10"
                 android:hint="@string/Apellidos"
                 android:inputType="text|textPersonName"
-                android:digits="qwertzuiopasdfghjklyxcvbnmñ,QWERTZUIOPASDFGHJKLYXCVBNMÑ"
                 android:text=""
                 tools:ignore="MissingConstraints" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -80,24 +91,29 @@
             android:layout_height="wrap_content"
             android:textColorHint="@color/azul"
             app:boxStrokeColor="@color/azul"
+            app:counterTextColor="@color/azul"
             app:errorEnabled="true"
             app:helperText="@string/MUsuario"
             app:helperTextEnabled="true"
             app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Body1"
             app:helperTextTextColor="@color/azul"
+            app:hintTextColor="@color/azul"
             app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:placeholderTextColor="@color/azul"
+            app:prefixTextColor="@color/azul"
+            app:startIconTint="@color/azul"
             tools:ignore="MissingConstraints">
 
             <EditText
                 android:id="@+id/editUsuario"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
+                android:digits="0,1,2,3,4,5,6,7,8,9,qwertzuiopasdfghjklyxcvbnmñ,QWERTZUIOPASDFGHJKLYXCVBNMÑ,@-_"
                 android:ems="10"
                 android:hint="@string/Usuario"
-                android:digits="0,1,2,3,4,5,6,7,8,9,qwertzuiopasdfghjklyxcvbnmñ,QWERTZUIOPASDFGHJKLYXCVBNMÑ,@-_"
                 android:text=""
                 tools:ignore="MissingConstraints" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -108,15 +124,20 @@
             android:layout_height="wrap_content"
             android:textColorHint="@color/azul"
             app:boxStrokeColor="@color/azul"
+            app:counterTextColor="@color/azul"
             app:errorEnabled="true"
             app:helperTextEnabled="true"
             app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Body1"
             app:helperTextTextColor="@color/azul"
+            app:hintTextColor="@color/azul"
             app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:prefixTextColor="@color/azul"
+            app:suffixTextColor="@color/azul"
             tools:ignore="MissingConstraints">
+
             <EditText
                 android:id="@+id/editMail"
                 android:layout_width="250dp"
@@ -133,17 +154,19 @@
             android:layout_height="wrap_content"
             android:textColorHint="@color/azul"
             app:boxStrokeColor="@color/azul"
+            app:counterTextColor="@color/azul"
             app:errorEnabled="true"
             app:helperText="@string/MContra"
             app:helperTextEnabled="true"
             app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Body1"
             app:helperTextTextColor="@color/azul"
-            app:layout_constraintBottom_toTopOf="@+id/guideline3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:hintTextColor="@color/azul"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/azul"
+            app:placeholderTextColor="@color/azul"
+            app:prefixTextColor="@color/azul"
+            app:startIconTint="@color/azul"
+            app:suffixTextColor="@color/azul"
             tools:ignore="MissingConstraints">
 
             <EditText
@@ -163,16 +186,20 @@
             android:layout_height="wrap_content"
             android:textColorHint="@color/azul"
             app:boxStrokeColor="@color/azul"
+            app:endIconTint="@color/azul"
             app:errorEnabled="true"
             app:helperTextEnabled="true"
             app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Body1"
             app:helperTextTextColor="@color/azul"
+            app:hintTextColor="@color/azul"
             app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline2"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/azul"
+            app:placeholderTextColor="@color/azul"
+            app:startIconTint="@color/azul"
             tools:ignore="MissingConstraints">
 
             <EditText
@@ -209,25 +236,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="4"
-                android:text="@string/Genero" />
+                android:text="@string/Genero"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/RadioM"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Masculino" />
+                android:text="@string/Masculino"
+                android:textColor="@color/azul"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/RadioF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Femenino" />
+                android:text="@string/Femenino"
+                android:textColor="@color/azul"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/RadioN"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/NBinario" />
+                android:text="@string/NBinario"
+                android:textColor="@color/azul"
+                android:textStyle="bold" />
 
         </RadioGroup>
         <![CDATA[
@@ -236,38 +270,84 @@
 
     ]]>
     </LinearLayout>
-        <Spinner
-            android:id="@+id/spinnerNacionalidad"
+        <LinearLayout
+            android:id="@+id/linearLayout3"
             android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:entries="@array/nacionalidad"
-            app:layout_constraintBottom_toTopOf="@+id/guideline3"
-            app:layout_constraintEnd_toStartOf="@+id/conversor1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.511"
-            app:layout_constraintVertical_bias="0.471"
-            tools:ignore="MissingConstraints" />
-        <Spinner
-            android:id="@+id/spinnerFabricante"
+            tools:ignore="ExtraText">
+
+            <TextView
+                android:id="@+id/txNacionalidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/Nacionalidad"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinnerNacionalidad"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:entries="@array/nacionalidad"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="48dp"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linearLayout4"
             android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:entries="@array/fabricante"
-            app:layout_constraintBottom_toTopOf="@+id/guideline3"
-            app:layout_constraintEnd_toStartOf="@+id/conversor1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.511"
-            app:layout_constraintVertical_bias="0.471"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="ExtraText">
+
+            <TextView
+                android:id="@+id/txFabricante"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/FvFabricante"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinnerFabricante"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:entries="@array/fabricante"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHorizontal_bias="0.511"
+                app:layout_constraintVertical_bias="0.471"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/buttonEnviar"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="150dp"
+            android:layout_marginLeft="200dp"
             android:layout_marginTop="0dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="0dp"
             android:backgroundTint="@color/azul"
             android:text="@string/Enviar"
             android:textColor="@color/white" />
@@ -276,9 +356,14 @@
             android:id="@+id/buttonCuenta"
             android:layout_width="150dp"
             android:layout_height="60dp"
-            android:layout_marginLeft="230dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="-12dp"
             android:backgroundTint="@color/azul"
             android:text="@string/YCuenta"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:textColor="@color/white" />
     </LinearLayout>
 

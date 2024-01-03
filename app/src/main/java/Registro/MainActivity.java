@@ -16,6 +16,8 @@ import android.widget.Toast;
 import com.example.proyectofinalm13.R;
 import com.google.android.material.textfield.TextInputLayout;
 
+import Usuario.pantallaUsuario;
+
 public class MainActivity extends AppCompatActivity {
     private EditText etUsuario, etContraseña;
     private TextInputLayout TiUsuario,TiContra;
@@ -46,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                String con = s.toString();
                 String usuario= etUsuario.getText().toString();
                 if(usuario.isEmpty()){
                     TiUsuario.setError("Está en blanco");
@@ -128,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
         String contrasenaTest = "123456";
         //Prueba para hacer el cambio de activity
         if(usuarioTest.equals(usuario) & contrasenaTest.equals(contrasena)){
-            Intent intent = new Intent(this, ActivityRegistro.class);
+            Intent intent = new Intent(this, pantallaUsuario.class);
             startActivity(intent);
             finish();
         }else{
