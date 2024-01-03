@@ -46,15 +46,22 @@
         android:layout_height="wrap_content"
         android:textColorHint="@color/azul"
         app:boxStrokeColor="@color/azul"
+        app:counterTextColor="@color/azul"
+        app:endIconTint="@color/azul"
         app:errorEnabled="true"
         app:helperText='@string/IUsuario'
         app:helperTextEnabled="true"
         app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Body1"
         app:helperTextTextColor="@color/azul"
+        app:hintTextColor="@color/azul"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:placeholderTextColor="@color/azul"
+        app:prefixTextColor="@color/azul"
+        app:startIconTint="@color/azul"
+        app:suffixTextColor="@color/azul"
         tools:ignore="MissingConstraints">
 
         <EditText
@@ -87,7 +94,7 @@
         android:textColorHint="@color/azul"
         app:boxStrokeColor="@color/azul"
         app:counterEnabled="true"
-        app:counterMaxLength="15"
+        app:counterMaxLength="10"
         app:errorEnabled="true"
         app:helperText="@string/IContra"
         app:helperTextEnabled="true"
@@ -99,6 +106,8 @@
         app:layout_constraintTop_toTopOf="@+id/guideline2"
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="@color/azul"
+        app:placeholderTextColor="@color/azul"
+        app:startIconTint="@color/azul"
         tools:ignore="MissingConstraints">
 
 

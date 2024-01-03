@@ -2,6 +2,7 @@
     <string name="app_name">ProyectoFinalM13</string>
     <string name="Usuario">Usuario</string>
     <string name="Contrasena">Contraseña</string>
+    <string name="NContrasena">Introduce contraseña</string>
     <string name="RepContra">Repite Contraseña</string>
     <string name="Nombre">Nombre</string>
     <string name="Apellidos">Apellidos</string>
@@ -22,4 +23,6 @@
     <string name="Femenino">Femenino</string>
     <string name="NBinario">No Binario</string>
     <string name="YCuenta">¿Ya tienes una cuenta?</string>
+    <string name="FvFabricante">¿Fabricante favorito?</string>
+    <string name="Nacionalidad">Nacionalidad</string>
 </resources>

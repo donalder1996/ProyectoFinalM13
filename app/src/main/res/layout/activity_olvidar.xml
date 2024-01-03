@@ -53,6 +53,7 @@
         android:gravity="center"
         android:text="@string/Olvidar"
         android:textColor="@color/azul"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.37"
@@ -62,22 +63,36 @@
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TIMail"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/azul"
+        app:boxStrokeColor="@color/azul"
+        app:counterTextColor="@color/azul"
+        app:errorEnabled="true"
+        app:helperTextEnabled="true"
+        app:helperTextTextColor="@color/azul"
+        app:hintTextColor="@color/azul"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:passwordToggleTint="@color/azul"
+        app:placeholderTextColor="@color/azul"
+        app:prefixTextColor="@color/azul"
+        app:startIconTint="@color/azul"
+        app:suffixTextColor="@color/azul"
         tools:ignore="MissingConstraints">
 
         <EditText
-            android:id="@+id/editTextMail"
+            android:id="@+id/etComMail"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:ems="10"
             android:hint="@string/Mail"
             android:inputType="text|textWebEmailAddress"
             android:text=""
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/guideline2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -87,24 +102,39 @@
             tools:ignore="MissingConstraints" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TIRMail"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/azul"
+        app:boxStrokeColor="@color/azul"
+        app:counterTextColor="@color/azul"
+        app:errorEnabled="true"
+        app:helperTextEnabled="true"
+        app:helperTextTextColor="@color/azul"
+        app:hintTextColor="@color/azul"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:passwordToggleTint="@color/azul"
+        app:placeholderTextColor="@color/azul"
+        app:prefixTextColor="@color/azul"
+        app:startIconTint="@color/azul"
+        app:suffixTextColor="@color/azul"
         tools:ignore="MissingConstraints">
 
 
         <EditText
-            android:id="@+id/editTextMail2"
+            android:id="@+id/etComRMail"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:ems="10"
             android:hint="@string/RepMail"
             android:inputType="text|textWebEmailAddress"
             android:text=""
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/guideline2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -118,7 +148,7 @@
         android:id="@+id/buttonEnviar"
         android:layout_width="218dp"
         android:layout_height="48dp"
-        android:backgroundTint="@color/gris"
+        android:backgroundTint="@color/azul"
         android:text="@string/Enviar"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
