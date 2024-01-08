@@ -25,4 +25,5 @@
     <string name="YCuenta">¿Ya tienes una cuenta?</string>
     <string name="FvFabricante">¿Fabricante favorito?</string>
     <string name="Nacionalidad">Nacionalidad</string>
+    <string name="Editar">Editar la información</string>
 </resources>

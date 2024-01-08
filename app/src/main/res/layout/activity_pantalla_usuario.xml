@@ -44,4 +44,209 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.422" />
+
+
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/buttonEditar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.66"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="@string/Nombre"
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/añadirNombre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="@string/Nombre"
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="@string/Apellidos"
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/añadirApellidos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="@string/Apellidos"
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="@string/Nacionalidad"
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/añadirNacionalidad"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="@string/Nacionalidad"
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="@string/FvFabricante"
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/añadirFabricante"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="@string/FvFabricante"
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="@string/Genero"
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/añadirGenero"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="@string/Genero"
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+    </TableLayout>
+
+
+    <Button
+        android:id="@+id/buttonEditar"
+        android:layout_width="218dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/azul"
+        android:text="@string/Editar"
+        app:layout_constraintBottom_toTopOf="@+id/banner_colecciones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/gris"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/banner_colecciones"
+        android:layout_width="410dp"
+        android:layout_height="139dp"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/banner_mis_colecciones"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <ImageView
+        android:id="@+id/banner_coches"
+        android:layout_width="410dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/banner_coches"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
