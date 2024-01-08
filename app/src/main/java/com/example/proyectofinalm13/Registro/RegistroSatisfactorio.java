@@ -1,4 +1,4 @@
-package Registro;
+package com.example.proyectofinalm13.Registro;
 
 import androidx.appcompat.app.AppCompatActivity;
 

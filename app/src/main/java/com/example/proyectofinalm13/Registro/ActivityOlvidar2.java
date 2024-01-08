@@ -1,4 +1,4 @@
-package Registro;
+package com.example.proyectofinalm13.Registro;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.proyectofinalm13.R;
 import com.google.android.material.textfield.TextInputLayout;

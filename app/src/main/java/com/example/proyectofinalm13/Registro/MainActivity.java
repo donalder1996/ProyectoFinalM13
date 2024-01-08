@@ -1,4 +1,4 @@
-package Registro;
+package com.example.proyectofinalm13.Registro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,9 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.proyectofinalm13.R;
+import com.example.proyectofinalm13.Usuario.pantallaUsuario;
 import com.google.android.material.textfield.TextInputLayout;
-
-import Usuario.pantallaUsuario;
 
 public class MainActivity extends AppCompatActivity {
     private EditText etUsuario, etContraseña;
