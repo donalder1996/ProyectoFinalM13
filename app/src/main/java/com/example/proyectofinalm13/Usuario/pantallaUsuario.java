@@ -18,7 +18,7 @@ import com.example.proyectofinalm13.Registro.MainActivity;
 public class pantallaUsuario extends AppCompatActivity {
     private ImageView IvBack,IvBCoches,IvBColecciones;
     private Button btnEditar;
-    private TextView  tvNombre, tvApellidos, tvNacionalidad, tvFabricante,tvGenero;
+    private TextView  tvNombre, tvApellidos, tvNacionalidad, tvFabricante;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +32,6 @@ public class pantallaUsuario extends AppCompatActivity {
         tvApellidos = findViewById(R.id.añadirApellidos);
         tvNacionalidad = findViewById(R.id.añadirNacionalidad);
         tvFabricante = findViewById(R.id.añadirFabricante);
-        tvGenero = findViewById(R.id.añadirGenero);
         IvBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
