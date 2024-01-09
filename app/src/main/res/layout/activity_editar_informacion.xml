@@ -82,6 +82,21 @@
                 android:gravity="center_horizontal"
                 android:padding="10sp"
                 android:hint="@string/Nombre"
+                android:textColorHint="azul"
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+            <!-- La tercera columna de los 4 elemenentos para a la hora de enviar el mensaje, hacer el setText
+             en caso de que los campos estén en blanco-->
+            <TextView
+                android:id="@+id/nombreBlanco"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text=""
                 android:textColor="@color/azul"
                 android:textSize="14dp"
                 android:textStyle="bold" />
@@ -113,8 +128,22 @@
                 android:padding="10sp"
                 android:hint="@string/Apellidos"
                 android:textColor="@color/azul"
+                android:textColorHint="@color/azul"
                 android:textSize="14dp"
                 android:textStyle="bold" />
+            <TextView
+                android:id="@+id/apellidoBlanco"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text=""
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
 
         </TableRow>
 
@@ -132,15 +161,30 @@
                 android:textSize="14dp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/cambiarNacionalidad"
+            <Spinner
+                android:id="@+id/spinnerNacion"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:ems="4"
                 android:gravity="center_horizontal"
                 android:padding="10sp"
-                android:hint="@string/Nacionalidad"
+                android:text="@string/Nombre"
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:backgroundTint="@color/azul"
+                android:textStyle="bold"
+                android:entries="@array/nacionalidad"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/nacionalidadBlanco"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text=""
                 android:textColor="@color/azul"
                 android:textSize="14dp"
                 android:textStyle="bold" />
@@ -161,15 +205,30 @@
                 android:textSize="14dp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/cambiarFabricante"
+            <Spinner
+                android:id="@+id/spinnerFabri"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:ems="4"
                 android:gravity="center_horizontal"
                 android:padding="10sp"
-                android:hint="@string/FvFabricante"
+                android:text="@string/Nombre"
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:backgroundTint="@color/azul"
+                android:textStyle="bold"
+                android:entries="@array/fabricante"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/FabricanteBlanco"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text=""
                 android:textColor="@color/azul"
                 android:textSize="14dp"
                 android:textStyle="bold" />
