@@ -66,6 +66,7 @@ public class pantallaUsuario extends AppCompatActivity {
 
         });
     }
+    //Dar la opción de volver a login o mantenerse en la pantalla
     private void mostrarDialogo() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Selecciona una opción")

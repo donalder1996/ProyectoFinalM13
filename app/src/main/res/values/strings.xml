@@ -26,4 +26,6 @@
     <string name="FvFabricante">¿Fabricante favorito?</string>
     <string name="Nacionalidad">Nacionalidad</string>
     <string name="Editar">Editar la información</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

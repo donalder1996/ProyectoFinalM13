@@ -51,12 +51,12 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="40dp"
-        android:layout_marginTop="8dp"
         android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/buttonEditar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.66"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
         tools:ignore="MissingConstraints">
 
         <TableRow>
@@ -179,35 +179,6 @@
 
         </TableRow>
 
-        <TableRow>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:ems="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/Genero"
-                android:textColor="@color/azul"
-                android:textSize="14dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/añadirGenero"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:ems="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/Genero"
-                android:textColor="@color/azul"
-                android:textSize="14dp"
-                android:textStyle="bold" />
-
-
-        </TableRow>
     </TableLayout>
 
 
