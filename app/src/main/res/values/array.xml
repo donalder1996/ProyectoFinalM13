@@ -272,4 +272,25 @@
         <item>Chevrolet</item>
         <item>Lamborghini</item>
     </string-array>
+    <!-- Para las colecciones como es una demo, usar primero en el Spinner el array fabricante, luego crear uno nuevo con lo que se guarde en la base de datos
+    no hace falta tener todas la marcas
+     <string-array name="fabricante">
+        <item></item>
+        <item>mostrar todos</item>
+        <item>Ferrari</item>
+        <item>Renault</item>
+        <item>Ford</item>
+        <item>BMW</item>
+        <item>Mercedes-Benz</item>
+        <item>Audi</item>
+        <item>Lexus</item>
+        <item>Opel</item>
+        <item>Seat</item>
+        <item>Tesla</item>
+        <item>Porsche</item>
+        <item>Chevrolet</item>
+        <item>Lamborghini</item>
+    </string-array>
+
+    -->
 </resources>
