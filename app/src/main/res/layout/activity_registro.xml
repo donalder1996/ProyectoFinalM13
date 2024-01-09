@@ -301,6 +301,7 @@
                 app:layout_constraintEnd_toStartOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                android:backgroundTint="@color/azul"
                 android:layout_marginLeft="48dp"
                 tools:ignore="MissingConstraints" />
 
@@ -336,6 +337,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintHorizontal_bias="0.511"
+                android:backgroundTint="@color/azul"
                 app:layout_constraintVertical_bias="0.471"
                 tools:ignore="MissingConstraints" />
         </LinearLayout>
