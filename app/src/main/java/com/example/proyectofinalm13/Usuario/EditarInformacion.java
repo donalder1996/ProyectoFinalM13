@@ -7,22 +7,27 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.proyectofinalm13.R;
 import com.example.proyectofinalm13.Registro.MainActivity;
+import com.example.proyectofinalm13.Registro.RegistroSatisfactorio;
 
 public class EditarInformacion extends AppCompatActivity {
     ImageView IvBack;
      Spinner spinnerNacionalidad, spinnerMarca;
      EditText  etNombre, etApellido;
+     TextView TvNombre, TvApellido,TvSNacion, TvSMarca;
      Button btnEnviar;
-    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,9 +35,14 @@ public class EditarInformacion extends AppCompatActivity {
         IvBack = findViewById(R.id.back_btn3);
         spinnerMarca = findViewById(R.id.spinnerFabri);
         spinnerNacionalidad = findViewById(R.id.spinnerNacion);
-        etNombre = findViewById(R.id.nombreBlanco);
-        etApellido = findViewById(R.id.apellidoBlanco);
+        etNombre = findViewById(R.id.cambiarNombre);
+        etApellido = findViewById(R.id.cambiarApellidos);
+        TvNombre = findViewById(R.id.nombreBlanco);
+        TvApellido = findViewById(R.id.apellidoBlanco);
+        TvSNacion = findViewById(R.id.nacionalidadBlanco);
+        TvSMarca = findViewById(R.id.FabricanteBlanco);
         btnEnviar = findViewById(R.id.buttonEnviarEditar);
+
 
         //Adapter spinner fabricante
         ArrayAdapter<CharSequence> adaptadorMarca = ArrayAdapter.createFromResource(this, R.array.fabricante, android.R.layout.simple_spinner_item);
@@ -42,6 +52,8 @@ public class EditarInformacion extends AppCompatActivity {
         ArrayAdapter<CharSequence> adaptadorFabricante = ArrayAdapter.createFromResource(this, R.array.nacionalidad, android.R.layout.simple_spinner_item);
         adaptadorFabricante.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerNacionalidad.setAdapter(adaptadorFabricante);
+
+
         IvBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,6 +70,7 @@ public class EditarInformacion extends AppCompatActivity {
             }
 
         });
+
     }
     //Dar la opción de mantenerse en la pantalla o volver a la pantalla de usuario
     private void mostrarDialogo() {
@@ -81,8 +94,47 @@ public class EditarInformacion extends AppCompatActivity {
                 })
                 .show();
     }
-    //Al buscar el botón comprobar si los campos están en blanco y si todo está bien hacer el insert
-    private void controlarCampos() {
+    //Al buscar el botón comprobar si los campos están en blanco y hacer insert
 
+    private void controlarCampos() {
+    String nombre = etNombre.getText().toString();
+    String apellidos = etApellido.getText().toString();
+    String spinnerFabricantePos = spinnerMarca.getItemAtPosition(0).toString();
+    String spinnerNacionPos=  spinnerNacionalidad.getItemAtPosition(0).toString();
+    String spinnerFabricante = spinnerMarca.getSelectedItem().toString();
+    String spinnerNacion=  spinnerNacionalidad.getSelectedItem().toString(); //spinnerFabricante.equals(spinnerFabricantePos)
+
+    if(nombre.isEmpty()){
+        TvNombre.setText("texto en blanco");
+    } else{
+        TvNombre.setText("");
     }
+    if(apellidos.isEmpty()){
+            TvApellido.setText("texto en blanco");
+        }
+    else{
+        TvApellido.setText("");
+    }
+    if(spinnerNacion.equals(spinnerNacionPos) || spinnerNacion.isEmpty()){
+        TvSNacion.setText("texto en blanco");
+    } else{
+        TvSNacion.setText("");
+    }
+    if(spinnerNacion.equals(spinnerNacionPos) || spinnerNacion.isEmpty()){
+            TvSMarca.setText("texto en blanco");
+        }
+    else{
+        TvSMarca.setText("");
+    }
+
+    //insert
+        if(!nombre.isEmpty() & !apellidos.isEmpty() && !spinnerNacion.equals(spinnerNacionPos) && !spinnerFabricante.equals(spinnerFabricantePos)){
+            Toast.makeText(this, "Datos guardados", Toast.LENGTH_LONG).show();
+
+        }else{
+            Toast.makeText(this, "Campos incompletos", Toast.LENGTH_LONG).show();
+        }
+    }
+
+
 }

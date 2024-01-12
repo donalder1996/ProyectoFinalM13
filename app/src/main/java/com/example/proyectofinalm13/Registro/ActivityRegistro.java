@@ -68,9 +68,8 @@ public class ActivityRegistro extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                String con = s.toString();
                 String usuario= etNombre.getText().toString();
-                if(usuario.isEmpty()){
+                if(usuario.isEmpty()  ){
                     TiNombre.setError("Está en blanco");
                 }else{
                     TiNombre.setError("");
@@ -91,7 +90,6 @@ public class ActivityRegistro extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                String con = s.toString();
                 String usuario= etApellidos.getText().toString();
                 if(usuario.isEmpty()){
                     TiApellidos.setError("Está en blanco");
@@ -182,13 +180,29 @@ public class ActivityRegistro extends AppCompatActivity {
                 }else{
                     TiContra.setError("");
                 }
-                if(!RepContra.equals(ComprobarContra)){
-                    TiRepContra.setError("");
+                if(!ComprobarContra.isEmpty() & ComprobarContra.length() < 4){
+                    TiContra.setError("minimo 4 caracteres");
+                }else if(ComprobarContra.isEmpty()){
+                    TiContra.setError("Está en blanco");
+                }else if(ComprobarContra.length() > 10){
+                    TiContra.setError("máximo 10 caracteres");
+                }
+                else{
+                    TiContra.setError("");
+                }
+
+                if(!ComprobarContra.equals(RepContra)){
+
                 }else{
                     TiRepContra.setError("");
-                    TiRepContra.setHelperText("Las contraseñas coinciden");
+                    if(ComprobarContra.isEmpty()){
+                        TiRepContra.setError("Está en blanco");
+                    }
+                    TiRepContra.setHelperText("Los correos coinciden");
 
                 }
+
+
             }
 
             @Override

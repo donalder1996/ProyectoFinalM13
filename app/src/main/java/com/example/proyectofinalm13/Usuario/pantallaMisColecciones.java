@@ -16,16 +16,25 @@ import com.example.proyectofinalm13.Registro.MainActivity;
 
 public class pantallaMisColecciones extends AppCompatActivity {
     private Spinner spinnerMarca;
-    private ImageView IvBack;
+    private ImageView IvBack,IvBanner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_mis_colecciones);
         IvBack = findViewById(R.id.back_btn4);
+        IvBanner = findViewById(R.id.banner_colecciones);
         IvBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mostrarDialogo();
+
+            }
+
+        });
+        IvBanner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity();
 
             }
 
@@ -58,5 +67,14 @@ public class pantallaMisColecciones extends AppCompatActivity {
                     }
                 })
                 .show();
+    }
+    /*
+    Esto es un activity atajo para probar que funciona bien la vista horizontal en la siguiente activity
+    en la versión final borrar el tajo
+     */
+    private void activity() {
+        // Acción a realizar al seleccionar "Ir a la siguiente pantalla
+        Intent intent = new Intent((getApplication()), ColeccionesAnadirCoche.class);
+        startActivity(intent);
     }
 }

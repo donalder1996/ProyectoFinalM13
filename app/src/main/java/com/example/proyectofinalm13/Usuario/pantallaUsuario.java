@@ -24,8 +24,8 @@ public class pantallaUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_usuario);
         IvBack = findViewById(R.id.back_btn2);
-        IvBCoches = findViewById(R.id.banner_colecciones);
-        IvBColecciones = findViewById(R.id.banner_coches);
+        IvBCoches = findViewById(R.id.banner_coches);
+        IvBColecciones = findViewById(R.id.banner_colecciones);
         btnEditar = findViewById(R.id.buttonEditar);
         //Añadir el texto con la información de la base de datos
         tvNombre = findViewById(R.id.añadirNombre);

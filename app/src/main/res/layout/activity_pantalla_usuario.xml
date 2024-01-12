@@ -70,7 +70,7 @@
                 android:padding="10sp"
                 android:text="@string/Nombre"
                 android:textColor="@color/azul"
-                android:textSize="14dp"
+                android:textSize="@dimen/_10sdp"
                 android:textStyle="bold" />
 
             <TextView
@@ -80,7 +80,7 @@
                 android:layout_weight="4"
                 android:ems="4"
                 android:gravity="center_horizontal"
-                android:padding="10sp"
+                android:padding="@dimen/_10sdp"
                 android:text="@string/Nombre"
                 android:textColor="@color/azul"
                 android:textSize="14dp"
@@ -100,7 +100,7 @@
                 android:padding="10sp"
                 android:text="@string/Apellidos"
                 android:textColor="@color/azul"
-                android:textSize="14dp"
+                android:textSize="@dimen/_10sdp"
                 android:textStyle="bold" />
 
             <TextView
@@ -113,7 +113,7 @@
                 android:padding="10sp"
                 android:text="@string/Apellidos"
                 android:textColor="@color/azul"
-                android:textSize="14dp"
+                android:textSize="@dimen/_10sdp"
                 android:textStyle="bold" />
 
 
@@ -130,7 +130,7 @@
                 android:padding="10sp"
                 android:text="@string/Nacionalidad"
                 android:textColor="@color/azul"
-                android:textSize="14dp"
+                android:textSize="@dimen/_10sdp"
                 android:textStyle="bold" />
 
             <TextView
@@ -143,7 +143,7 @@
                 android:padding="10sp"
                 android:text="@string/Nacionalidad"
                 android:textColor="@color/azul"
-                android:textSize="14dp"
+                android:textSize="@dimen/_10sdp"
                 android:textStyle="bold" />
 
 
@@ -160,7 +160,7 @@
                 android:padding="10sp"
                 android:text="@string/FvFabricante"
                 android:textColor="@color/azul"
-                android:textSize="14dp"
+                android:textSize="@dimen/_10sdp"
                 android:textStyle="bold" />
 
             <TextView
@@ -173,7 +173,7 @@
                 android:padding="10sp"
                 android:text="@string/FvFabricante"
                 android:textColor="@color/azul"
-                android:textSize="14dp"
+                android:textSize="@dimen/_10sdp"
                 android:textStyle="bold" />
 
 
@@ -184,9 +184,9 @@
 
     <Button
         android:id="@+id/buttonEditar"
-        android:layout_width="218dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="@dimen/_160sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         android:backgroundTint="@color/azul"
         android:text="@string/Editar"
         app:layout_constraintBottom_toTopOf="@+id/banner_colecciones"
@@ -198,7 +198,7 @@
 
     <ImageView
         android:id="@+id/banner_colecciones"
-        android:layout_width="410dp"
+        android:layout_width="@dimen/_310sdp"
         android:layout_height="139dp"
         android:layout_alignParentStart="true"
         android:src="@drawable/banner_mis_colecciones"
