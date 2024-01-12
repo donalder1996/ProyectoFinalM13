@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <application
         android:allowBackup="true"
@@ -11,34 +11,57 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoFinalM13"
-        tools:targetApi="31">
+        tools:targetApi="31" >
+        -->
+        <!-- Para controlar que en la rotación no se reinicie el activity y se salten los espacios en blanco
+        se pone android:configChanges="orientation|screenSize"
+    -->
+        <activity
+            android:name=".Usuario.MisColleccionesEliminarCoche"
+            android:configChanges="orientation|screenSize"
+            android:exported="false"
+            android:label="@string/title_activity_mis_collecciones_eliminar_coche"
+            android:theme="@style/Theme.ProyectoFinalM13" />
+        <activity
+            android:name=".Usuario.ColeccionesAnadirCoche"
+            android:configChanges="orientation|screenSize"
+            android:exported="false" />
         <activity
             android:name=".Usuario.EditarInformacion"
+            android:configChanges="orientation|screenSize"
             android:exported="false" />
         <activity
             android:name=".Usuario.pantallaMisColecciones"
+            android:configChanges="orientation|screenSize"
             android:exported="false" />
         <activity
             android:name=".Usuario.pantallaCoches"
+            android:configChanges="orientation|screenSize"
             android:exported="false" />
         <activity
             android:name=".Usuario.pantallaUsuario"
+            android:configChanges="orientation|screenSize"
             android:exported="false" />
         <activity
             android:name=".Registro.RegistroSatisfactorio"
+            android:configChanges="orientation|screenSize"
             android:exported="false" />
         <activity
             android:name=".Registro.ActivityOlvidar2"
+            android:configChanges="orientation|screenSize"
             android:exported="false" />
         <activity
             android:name=".Registro.ActivityOlvidar"
+            android:configChanges="orientation|screenSize"
             android:exported="false" />
         <activity
             android:name=".Registro.ActivityRegistro"
+            android:configChanges="orientation|screenSize"
             android:exported="false" />
         <activity
             android:name=".Registro.MainActivity"
-            android:exported="true">
+            android:configChanges="orientation|screenSize"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

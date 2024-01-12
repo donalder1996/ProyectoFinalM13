@@ -96,6 +96,7 @@
                 android:textColor="@color/azul"
                 android:textSize="14dp"
                 android:textStyle="bold"
+                android:backgroundTint="@color/azul"
                 android:entries="@array/fabricante"
                 app:layout_constraintBottom_toTopOf="parent"
                 app:layout_constraintEnd_toStartOf="parent"
@@ -126,7 +127,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="ExtraText">
-        <ListView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listaListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
