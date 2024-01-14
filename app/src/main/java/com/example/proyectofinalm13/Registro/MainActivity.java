@@ -162,9 +162,11 @@ public class MainActivity extends AppCompatActivity {
                     if(response.equalsIgnoreCase("ingresaste correctamente")){
                         startActivity(new Intent(getApplicationContext(),pantallaUsuario.class));
                         Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
                     }
                     else{
                         Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
                     }
 
                 }
