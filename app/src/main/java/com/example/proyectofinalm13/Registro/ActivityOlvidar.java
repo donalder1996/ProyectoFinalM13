@@ -3,6 +3,7 @@ package com.example.proyectofinalm13.Registro;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,8 +16,19 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.proyectofinalm13.R;
+import com.example.proyectofinalm13.Usuario.pantallaUsuario;
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ActivityOlvidar extends AppCompatActivity {
     private ImageView IvBack;
@@ -135,18 +147,76 @@ public class ActivityOlvidar extends AppCompatActivity {
         String repMail = etCRepMail.getText().toString();
         String mailTest = "hola";
         String repMailTest = "hola";
+        String url = "http://10.0.2.2/check.php";
         //Prueba para hacer el cambio de activity
-        if(mailTest.equals(mail) & repMailTest.equals(repMail)){
+        if(mail.isEmpty()){
+            /*
             Intent intent = new Intent(this, ActivityOlvidar2.class);
             startActivity(intent);
             finish();
-        }else{
+
+             */
+        }else if (repMailTest.isEmpty()){
+
+        }       else{
+            final ProgressDialog progressDialog = new ProgressDialog(this);
+            progressDialog.setMessage("Por favor espera...");
+
+            progressDialog.show();
+            StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    progressDialog.dismiss();
+
+                    if(response.equalsIgnoreCase("ingresaste correctamente")){
+                        Intent intent = new Intent(getApplicationContext(), ActivityOlvidar2.class);
+                        intent.putExtra("hola",mail);
+                        startActivity(intent);
+                        finish();
+                       // startActivity(new Intent(getApplicationContext(), ActivityOlvidar2.class));
+                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+            },new Response.ErrorListener(){
+
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    progressDialog.dismiss();
+                    Toast.makeText(getApplicationContext(), error.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            ){
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String,String> params = new HashMap<String, String>();
+                    params.put("mail",mail);
+                    return params;
+
+                }
+            };
+
+            RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+            requestQueue.add(request);
+
+
+
+
+        }
+        /*
+        else{
             Toast.makeText(this, "Mail incorrecto o no existe en la base de datos", Toast.LENGTH_LONG).show();
+
+         */
         }
         //Lanzar en esta parte la base de datos
         //new ValidarUsuarioTask().execute(usuario, contrasena);
 
-    }
+
     private void mostrarDialogo() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Selecciona una opción")
