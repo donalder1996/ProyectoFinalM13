@@ -3,6 +3,7 @@ package com.example.proyectofinalm13.Registro;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -13,9 +14,19 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.proyectofinalm13.R;
 import com.example.proyectofinalm13.Usuario.pantallaUsuario;
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     private EditText etUsuario, etContraseña;
@@ -124,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
     private void campoVacio() {
         String usuario = etUsuario.getText().toString();
         String contrasena = etContraseña.getText().toString();
+        String url = "http://10.0.2.2/login.php";
         String usuarioTest = "hola";
         String contrasenaTest = "123456";
         //Prueba para hacer el cambio de activity
@@ -131,13 +143,63 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, pantallaUsuario.class);
             startActivity(intent);
             finish();
-        }else{
-            Toast.makeText(this, "Usuario o contraseña incorrecta", Toast.LENGTH_LONG).show();
+        }
+        if(usuario.isEmpty()){
+
+        }else if(contrasena.isEmpty()){
+
+        }
+        else{
+            final ProgressDialog progressDialog = new ProgressDialog(this);
+            progressDialog.setMessage("Por favor espera...");
+
+            progressDialog.show();
+            StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    progressDialog.dismiss();
+
+                    if(response.equalsIgnoreCase("ingresaste correctamente")){
+                        startActivity(new Intent(getApplicationContext(),pantallaUsuario.class));
+                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+            },new Response.ErrorListener(){
+
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    progressDialog.dismiss();
+                    Toast.makeText(getApplicationContext(), error.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            ){
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String,String> params = new HashMap<String, String>();
+                    params.put("user",usuario);
+                    params.put("contra",contrasena);
+                    return params;
+
+                }
+            };
+
+            RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+            requestQueue.add(request);
+
+
+
+
+        }
         }
         //Lanzar en esta parte la basede datos
         //new ValidarUsuarioTask().execute(usuario, contrasena);
 
-    }
+
     //Abrir el activity de registro
     private void abrirActivityRegistro() {
         Intent intent = new Intent(this, ActivityRegistro.class);

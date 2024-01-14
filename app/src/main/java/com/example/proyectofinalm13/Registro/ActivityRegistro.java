@@ -1,8 +1,11 @@
 package com.example.proyectofinalm13.Registro;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,8 +18,26 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.proyectofinalm13.R;
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 public class ActivityRegistro extends AppCompatActivity {
     private EditText etNombre, etApellidos,etUsuario, etMail, etContraseña,etRepContra;
@@ -273,33 +294,92 @@ public class ActivityRegistro extends AppCompatActivity {
     //Aquí se hace el cambio de activity si se cumplen las condiciones, quedaría implementar la parte del inset de la base de datos
     private void abrirActivity() {
         String nombre = etNombre.getText().toString();
-        String apellidos = etApellidos.getText().toString();
-        String usuario = etUsuario.getText().toString();
+        String apellido = etApellidos.getText().toString();
+        String user = etUsuario.getText().toString();
         String mail = etMail.getText().toString();
-        String contra = etContraseña.getText().toString();
+        String password = etContraseña.getText().toString();
         String RepContra = etRepContra.getText().toString();
         String spinnerFabricantePos = spinnerMarca.getItemAtPosition(0).toString();
         String spinnerNacionPos=  spinnerNacionalidad.getItemAtPosition(0).toString();
         String spinnerFabricante = spinnerMarca.getSelectedItem().toString();
         String spinnerNacion=  spinnerNacionalidad.getSelectedItem().toString();
-
+        String genero = "hola";
+        ProgressDialog progressDialog = new ProgressDialog(this);
         //Si se cumple esto se cambia de activity
-        if(!nombre.isEmpty() & !apellidos.isEmpty() & usuario.length() >=4 & usuario.length() <=15  & !mail.isEmpty() & contra.length() >= 4 & contra.length() <= 10 & contra.equals(RepContra) && !spinnerNacion.equals(spinnerNacionPos) && !spinnerFabricante.equals(spinnerFabricantePos) & rm.isChecked()  || rf.isChecked() || rn.isChecked()){
+        //if(nombre.isEmpty() & apellido.isEmpty() & user.length() <4 & user.length() >15  & mail.isEmpty() & password.length() < 4 & password.length() > 10 & password.equals(RepContra) && spinnerNacion.equals(spinnerNacionPos) && spinnerFabricante.equals(spinnerFabricantePos) & !rm.isChecked()  || !rf.isChecked() || !rn.isChecked()){
+           /*
             Intent intent = new Intent(this, RegistroSatisfactorio.class);
             startActivity(intent);
             finish();
 
+            */
+           // Toast.makeText(this, "Campos incompletos", Toast.LENGTH_LONG).show();
+            if(rm.isChecked()){
+                genero = rm.getText().toString();
+            }else if(rf.isChecked()){
+            genero = rf.getText().toString();
         }else{
-            Toast.makeText(this, "Campos incompletos", Toast.LENGTH_LONG).show();
+            genero = rn.getText().toString();
         }
+            if(nombre.isEmpty()){
 
+            } else if(user.length() <4 & user.length() >15){
 
+            }else if(mail.isEmpty()){
+
+            }else if(password.length() < 4 & password.length() > 10 & password.equals(RepContra)){
+
+            }else if(spinnerNacion.equals(spinnerNacionPos)){
+
+            }else if(spinnerFabricante.equals(spinnerFabricantePos)){
+        }else {
+            progressDialog.show();
+                String finalGenero = genero;
+                StringRequest request = new StringRequest(Request.Method.POST, "http://10.0.2.2/insertUsuario.php", new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    if (response.equalsIgnoreCase("datos insertados")) {
+                        Intent intent = new Intent(getApplicationContext(), RegistroSatisfactorio.class);
+                        startActivity(intent);
+                        finish();
+                        progressDialog.dismiss();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "no se guardó", Toast.LENGTH_LONG).show();
+                        progressDialog.dismiss();
+                    }
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                    progressDialog.dismiss();
+                }
+            }){
+                @Nullable
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map <String,String> params = new HashMap<String,String>();
+                    params.put("nombre",nombre);
+                    params.put("apellido",apellido);
+                    params.put("user",user);
+                    params.put("mail",mail);
+                    params.put("contra",password);
+                    params.put("genero", finalGenero);
+                    params.put("nacionalidad",spinnerNacion);
+                    params.put("fabricante",spinnerFabricante);
+                    return params;
+                }
+            };
+            RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+            requestQueue.add(request);
+        }
 
 
 
 
     }
 
-
-
 }
+
+
+
