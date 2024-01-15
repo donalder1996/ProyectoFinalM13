@@ -315,11 +315,9 @@ public class ActivityRegistro extends AppCompatActivity {
         }
             if(nombre.isEmpty()){
 
-            } else if(user.length() >=4 & user.length() <=15){
+            }
 
-            }else if(mail.isEmpty()){
-
-            }else if(password.length() >= 4 & password.length() <= 10 & password.equals(RepContra)){
+            else if(mail.isEmpty()){
 
             }else if(spinnerNacion.equals(spinnerNacionPos)){
 
@@ -334,6 +332,7 @@ public class ActivityRegistro extends AppCompatActivity {
                 public void onResponse(String response) {
                     if (response.equalsIgnoreCase("datos insertados")) {
                         Intent intent = new Intent(getApplicationContext(), RegistroSatisfactorio.class);
+                        intent.putExtra("usuario", user);
                         startActivity(intent);
                         finish();
                         progressDialog.dismiss();
