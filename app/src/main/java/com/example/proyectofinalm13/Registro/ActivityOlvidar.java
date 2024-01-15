@@ -148,7 +148,7 @@ public class ActivityOlvidar extends AppCompatActivity {
         String mailTest = "hola";
         String repMailTest = "hola";
         String url = "http://10.0.2.2/check.php";
-        //Prueba para hacer el cambio de activity
+
         if(mail.isEmpty()){
             /*
             Intent intent = new Intent(this, ActivityOlvidar2.class);
@@ -157,7 +157,7 @@ public class ActivityOlvidar extends AppCompatActivity {
 
              */
         }else if (repMailTest.isEmpty()){
-
+            //select para comprobar que el mail está en la base de datos
         }       else{
             final ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.setMessage("Por favor espera...");
@@ -170,7 +170,8 @@ public class ActivityOlvidar extends AppCompatActivity {
 
                     if(response.equalsIgnoreCase("ingresaste correctamente")){
                         Intent intent = new Intent(getApplicationContext(), ActivityOlvidar2.class);
-                        intent.putExtra("hola",mail);
+                        //envia los datos del mail al activity, para hacer el update
+                        intent.putExtra("mail",mail);
                         startActivity(intent);
                         finish();
                        // startActivity(new Intent(getApplicationContext(), ActivityOlvidar2.class));

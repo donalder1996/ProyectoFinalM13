@@ -149,8 +149,7 @@ public class ActivityOlvidar2 extends AppCompatActivity {
         String contrasena = etContra.getText().toString();
         String repContrasena = etRContra.getText().toString();
         Intent i = getIntent();
-        String mail = i.getStringExtra("hola");
-        String mail2= mail;
+        String mail = i.getStringExtra("mail");
         String url = "http://10.0.2.2/contra.php";
 
 
@@ -159,9 +158,11 @@ public class ActivityOlvidar2 extends AppCompatActivity {
         en caso de que no se cumple mensaje de internarlo de nuevo
          */
         if(contrasena.isEmpty()){
-            txTexto.setText("correcto todo");
+        //El update de la contraseña
+        }else if (repContrasena.isEmpty()){
 
-        }else{
+        }
+            else{
             final ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.setMessage("Actualizando....");
             progressDialog.show();
@@ -198,7 +199,7 @@ public class ActivityOlvidar2 extends AppCompatActivity {
 
                     Map<String,String> params;
                     params = new HashMap<String,String>();
-                    params.put("mail",mail2);
+                    params.put("mail",mail);
                     params.put("contra",contrasena);
                     return params;
                 }

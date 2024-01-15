@@ -136,19 +136,13 @@ public class MainActivity extends AppCompatActivity {
         String usuario = etUsuario.getText().toString();
         String contrasena = etContraseña.getText().toString();
         String url = "http://10.0.2.2/login.php";
-        String usuarioTest = "hola";
-        String contrasenaTest = "123456";
-        //Prueba para hacer el cambio de activity
-        if(usuarioTest.equals(usuario) & contrasenaTest.equals(contrasena)){
-            Intent intent = new Intent(this, pantallaUsuario.class);
-            startActivity(intent);
-            finish();
-        }
+
         if(usuario.isEmpty()){
 
         }else if(contrasena.isEmpty()){
 
         }
+        //el select con la base de datos
         else{
             final ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.setMessage("Por favor espera...");

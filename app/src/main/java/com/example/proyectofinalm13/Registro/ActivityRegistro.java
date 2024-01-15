@@ -305,15 +305,7 @@ public class ActivityRegistro extends AppCompatActivity {
         String spinnerNacion=  spinnerNacionalidad.getSelectedItem().toString();
         String genero = "hola";
         ProgressDialog progressDialog = new ProgressDialog(this);
-        //Si se cumple esto se cambia de activity
-        //if(nombre.isEmpty() & apellido.isEmpty() & user.length() <4 & user.length() >15  & mail.isEmpty() & password.length() < 4 & password.length() > 10 & password.equals(RepContra) && spinnerNacion.equals(spinnerNacionPos) && spinnerFabricante.equals(spinnerFabricantePos) & !rm.isChecked()  || !rf.isChecked() || !rn.isChecked()){
-           /*
-            Intent intent = new Intent(this, RegistroSatisfactorio.class);
-            startActivity(intent);
-            finish();
-
-            */
-           // Toast.makeText(this, "Campos incompletos", Toast.LENGTH_LONG).show();
+        //Para pasar la información del radio button
             if(rm.isChecked()){
                 genero = rm.getText().toString();
             }else if(rf.isChecked()){
@@ -323,16 +315,18 @@ public class ActivityRegistro extends AppCompatActivity {
         }
             if(nombre.isEmpty()){
 
-            } else if(user.length() <4 & user.length() >15){
+            } else if(user.length() >=4 & user.length() <=15){
 
             }else if(mail.isEmpty()){
 
-            }else if(password.length() < 4 & password.length() > 10 & password.equals(RepContra)){
+            }else if(password.length() >= 4 & password.length() <= 10 & password.equals(RepContra)){
 
             }else if(spinnerNacion.equals(spinnerNacionPos)){
 
             }else if(spinnerFabricante.equals(spinnerFabricantePos)){
-        }else {
+           }
+            //El insert a la base de datos
+            else {
             progressDialog.show();
                 String finalGenero = genero;
                 StringRequest request = new StringRequest(Request.Method.POST, "http://10.0.2.2/insertUsuario.php", new Response.Listener<String>() {
