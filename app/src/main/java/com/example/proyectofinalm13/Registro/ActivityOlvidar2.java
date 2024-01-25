@@ -151,6 +151,7 @@ public class ActivityOlvidar2 extends AppCompatActivity {
         Intent i = getIntent();
         String mail = i.getStringExtra("mail");
         String url = "http://10.0.2.2/contra.php";
+        String guardar;
 
 
         /*
@@ -161,59 +162,63 @@ public class ActivityOlvidar2 extends AppCompatActivity {
         //El update de la contraseña
         }else if (repContrasena.isEmpty()){
 
-        }
-            else{
-            final ProgressDialog progressDialog = new ProgressDialog(this);
-            progressDialog.setMessage("Actualizando....");
-            progressDialog.show();
+        }else if(!contrasena.isEmpty() && !repContrasena.isEmpty() && repContrasena.equals(contrasena)){
+            if(contrasena.length() > 3 && contrasena.length() <11 || repContrasena.length() > 3 && repContrasena.length() < 11){
+                final ProgressDialog progressDialog = new ProgressDialog(this);
+                progressDialog.setMessage("Actualizando....");
+                progressDialog.show();
 
-            StringRequest request = new StringRequest(Request.Method.POST, url,
-                    new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            if(response.equalsIgnoreCase("datos actualizados")){
-                                Intent intent = new Intent(getApplicationContext(), ActivityOlvidar2.class);
+                StringRequest request = new StringRequest(Request.Method.POST, url,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                if(response.equalsIgnoreCase("datos actualizados")){
+                                    Intent intent = new Intent(getApplicationContext(), ActivityOlvidar2.class);
 
 
-                                Toast.makeText(getApplicationContext(), "registro correcto", Toast.LENGTH_SHORT).show();
-                                txTexto.setText("registro correcto");
-                                progressDialog.dismiss();
+                                    Toast.makeText(getApplicationContext(), "registro correcto", Toast.LENGTH_SHORT).show();
+                                    txTexto.setText("registro correcto");
+                                    progressDialog.dismiss();
+                                }
+                                else{
+                                    Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
+                                    progressDialog.dismiss();
+                                }
                             }
-                            else{
-                                Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
-                                progressDialog.dismiss();
-                            }
-                        }
-                    }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
+                        }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
 
-                    Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-                    progressDialog.dismiss();
+                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
 
-                }
-            }){
+                    }
+                }){
 
-                @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
 
-                    Map<String,String> params;
-                    params = new HashMap<String,String>();
-                    params.put("mail",mail);
-                    params.put("contra",contrasena);
-                    return params;
-                }
-            };
+                        Map<String,String> params;
+                        params = new HashMap<String,String>();
+                        params.put("mail",mail);
+                        params.put("contra",contrasena);
+                        return params;
+                    }
+                };
 
-            RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-            requestQueue.add(request);
+                RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+                requestQueue.add(request);
 
 
 
 
 
+            }
+            }
         }
-        }
+
+
+
 
 
 

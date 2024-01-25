@@ -145,8 +145,6 @@ public class ActivityOlvidar extends AppCompatActivity {
     private void abrirCambio() {
         String mail = etCMail.getText().toString();
         String repMail = etCRepMail.getText().toString();
-        String mailTest = "hola";
-        String repMailTest = "hola";
         String url = "http://10.0.2.2/check.php";
 
         if(mail.isEmpty()){
@@ -156,9 +154,9 @@ public class ActivityOlvidar extends AppCompatActivity {
             finish();
 
              */
-        }else if (repMailTest.isEmpty()){
+        }else if (repMail.isEmpty()){
             //select para comprobar que el mail está en la base de datos
-        }       else{
+        }  else if(repMail.equals(mail) && !repMail.isEmpty() && !mail.isEmpty()){
             final ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.setMessage("Por favor espera...");
 
@@ -174,7 +172,7 @@ public class ActivityOlvidar extends AppCompatActivity {
                         intent.putExtra("mail",mail);
                         startActivity(intent);
                         finish();
-                       // startActivity(new Intent(getApplicationContext(), ActivityOlvidar2.class));
+                        // startActivity(new Intent(getApplicationContext(), ActivityOlvidar2.class));
                         Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
                     }
                     else{
@@ -203,19 +201,9 @@ public class ActivityOlvidar extends AppCompatActivity {
 
             RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
             requestQueue.add(request);
-
-
-
-
         }
-        /*
-        else{
-            Toast.makeText(this, "Mail incorrecto o no existe en la base de datos", Toast.LENGTH_LONG).show();
-
-         */
         }
-        //Lanzar en esta parte la base de datos
-        //new ValidarUsuarioTask().execute(usuario, contrasena);
+
 
 
     private void mostrarDialogo() {

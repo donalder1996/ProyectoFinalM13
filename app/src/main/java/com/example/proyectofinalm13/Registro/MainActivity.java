@@ -154,6 +154,8 @@ public class MainActivity extends AppCompatActivity {
                     progressDialog.dismiss();
 
                     if(response.equalsIgnoreCase("ingresaste correctamente")){
+                        Intent intent = new Intent();
+                                intent.putExtra("hola",usuario);
                         startActivity(new Intent(getApplicationContext(),pantallaUsuario.class));
                         Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
                         progressDialog.dismiss();

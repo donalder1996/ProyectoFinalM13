@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Usuario.EditarInformacion">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20109439" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+    <ImageView
+        android:id="@+id/back_btn3"
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/baseline_chevron_left_242"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.422" />
+
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="40dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.66"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="@string/Nombre"
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/cambiarNombre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:ems="4"
+                android:digits="qwertzuiopasdfghjklyxcvbnmñ,QWERTZUIOPASDFGHJKLYXCVBNMÑ"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:hint="@string/Nombre"
+                android:textColorHint="@color/azul"
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+            <!-- La tercera columna de los 4 elemenentos para a la hora de enviar el mensaje, hacer el setText
+             en caso de que los campos estén en blanco-->
+            <TextView
+                android:id="@+id/nombreBlanco"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text=""
+                android:textColor="@color/rojo"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="@string/Apellidos"
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/cambiarApellidos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="4"
+                android:digits="qwertzuiopasdfghjklyxcvbnmñ,QWERTZUIOPASDFGHJKLYXCVBNMÑ"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:hint="@string/Apellidos"
+                android:textColor="@color/azul"
+                android:textColorHint="@color/azul"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/apellidoBlanco"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text=""
+                android:textColor="@color/rojo"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="@string/Nacionalidad"
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinnerNacion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="@string/Nombre"
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:backgroundTint="@color/azul"
+                android:textStyle="bold"
+                android:entries="@array/nacionalidad"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/nacionalidadBlanco"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text=""
+                android:textColor="@color/rojo"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="@string/FvFabricante"
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinnerFabri"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="@string/Nombre"
+                android:textColor="@color/azul"
+                android:textSize="14dp"
+                android:backgroundTint="@color/azul"
+                android:textStyle="bold"
+                android:entries="@array/fabricante"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/FabricanteBlanco"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text=""
+                android:textColor="@color/rojo"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/buttonEnviarEditar"
+        android:layout_width="218dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/azul"
+        android:text="@string/Enviar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:strokeColor="@color/gris"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>

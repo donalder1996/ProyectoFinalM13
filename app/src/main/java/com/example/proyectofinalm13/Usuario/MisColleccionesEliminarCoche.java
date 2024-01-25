@@ -25,6 +25,7 @@ public class MisColleccionesEliminarCoche extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_mis_collecciones_eliminar_coche);
         IvBack = findViewById(R.id.back_btn5);
         IvCross = findViewById(R.id.tickEliminar);
         IvBack.setOnClickListener(new View.OnClickListener() {

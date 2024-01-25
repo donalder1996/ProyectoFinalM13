@@ -74,7 +74,7 @@ public class pantallaMisColecciones extends AppCompatActivity {
      */
     private void activity() {
         // Acción a realizar al seleccionar "Ir a la siguiente pantalla
-        Intent intent = new Intent((getApplication()), ColeccionesAnadirCoche.class);
+        Intent intent = new Intent((getApplication()), MisColleccionesEliminarCoche.class);
         startActivity(intent);
     }
 }

@@ -35,10 +35,20 @@
         app:layout_constraintGuide_percent="0.8" />
 
 
-
     <!--para el EditText del usuario, se hace uso de los recursos de material
     android:digits se utiliza para limitar los caracteres solo letras-numeros desde el XML -->
 
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="410dp"
+        android:layout_height="75dp"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/log"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/TiUsuario"
