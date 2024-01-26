@@ -214,13 +214,8 @@ public class ActivityOlvidar2 extends AppCompatActivity {
 
 
             }
-            }
         }
-
-
-
-
-
+    }
 
 
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Registro.MainActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -34,20 +34,46 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.8" />
 
-
+    <ImageView
+        android:id="@+id/banner_colecciones"
+        android:layout_width="410dp"
+        android:layout_height="139dp"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/log"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!--para el EditText del usuario, se hace uso de los recursos de material
     android:digits se utiliza para limitar los caracteres solo letras-numeros desde el XML -->
 
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TiUsuario"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/azul"
+        app:boxStrokeColor="@color/azul"
+        app:counterTextColor="@color/azul"
+        app:endIconTint="@color/azul"
+        app:errorEnabled="true"
+        app:helperText='@string/IUsuario'
+        app:helperTextEnabled="true"
+        app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:helperTextTextColor="@color/azul"
+        app:hintTextColor="@color/azul"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:placeholderTextColor="@color/azul"
+        app:prefixTextColor="@color/azul"
+        app:startIconTint="@color/azul"
+        app:suffixTextColor="@color/azul"
         tools:ignore="MissingConstraints">
+
         <EditText
             android:id="@+id/editTextUsuario"
             android:layout_width="250dp"
@@ -57,6 +83,7 @@
             android:hint="@string/Usuario"
             android:inputType="text"
             android:text=""
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/guideline2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -64,19 +91,33 @@
             app:layout_constraintTop_toTopOf="@+id/guideline"
             app:layout_constraintVertical_bias="0.54"
             tools:ignore="MissingConstraints" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <!--para el EditText de la contraseá, se hace uso de los recursos de material,
         app:passwordToggleEnabled="true" se usa para tener la opción de tener el ojo para mostrar la contraseña o los asteriscos-->
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TiNombre"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        app:passwordToggleEnabled="true"
+        android:textColorHint="@color/azul"
+        app:boxStrokeColor="@color/azul"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        app:errorEnabled="true"
+        app:helperText="@string/IContra"
+        app:helperTextEnabled="true"
+        app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:helperTextTextColor="@color/azul"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/azul"
+        app:placeholderTextColor="@color/azul"
+        app:startIconTint="@color/azul"
         tools:ignore="MissingConstraints">
 
 
@@ -88,19 +129,50 @@
             android:hint="@string/Contrasena"
             android:inputType="textPassword"
             android:text=""
+            android:textStyle="bold"
             tools:ignore="MissingConstraints" />
     </com.google.android.material.textfield.TextInputLayout>
-    <Button
-        android:id="@+id/button"
-        android:layout_width="218dp"
-        android:layout_height="48dp"
-        android:backgroundTint="@color/gris"
-        android:text="@string/Login"
-        app:strokeColor="@color/gris"
-        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+
+    <TextView
+        android:id="@+id/tvOlvidar"
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:text="@string/Olvidar"
+        android:textColor="@color/azul"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
         tools:ignore="MissingConstraints" />
 
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="218dp"
+        android:layout_height="48dp"
+        android:backgroundTint="@color/azul"
+        android:text="@string/Login"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        app:layout_constraintVertical_bias="0.663"
+        app:strokeColor="@color/gris"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonRegistro"
+        android:layout_width="218dp"
+        android:layout_height="48dp"
+        android:backgroundTint="@color/azul"
+        android:text="@string/Registro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.823"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:strokeColor="@color/gris"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

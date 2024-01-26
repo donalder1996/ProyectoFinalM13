@@ -33,7 +33,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.8" />
 
-       <ImageView
+    <ImageView
         android:id="@+id/banner_colecciones"
         android:layout_width="410dp"
         android:layout_height="139dp"

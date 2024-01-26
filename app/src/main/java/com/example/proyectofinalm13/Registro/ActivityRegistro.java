@@ -303,7 +303,7 @@ public class ActivityRegistro extends AppCompatActivity {
         String spinnerNacionPos=  spinnerNacionalidad.getItemAtPosition(0).toString();
         String spinnerFabricante = spinnerMarca.getSelectedItem().toString();
         String spinnerNacion=  spinnerNacionalidad.getSelectedItem().toString();
-        String genero = "";
+        String genero = "hola";
         ProgressDialog progressDialog = new ProgressDialog(this);
         //Para pasar la información del radio button
             if(rm.isChecked()){
@@ -322,59 +322,56 @@ public class ActivityRegistro extends AppCompatActivity {
             }else if(spinnerNacion.equals(spinnerNacionPos)){
 
             }else if(spinnerFabricante.equals(spinnerFabricantePos)){
-           }
-            else if(!nombre.isEmpty() && !apellido.isEmpty() && !user.isEmpty() && !password.isEmpty()
+                //instar en la base de datos
+           } else if(!nombre.isEmpty() && !apellido.isEmpty() && !user.isEmpty() && !password.isEmpty()
                     && !RepContra.isEmpty()  && !spinnerNacion.equals(spinnerNacionPos) && spinnerFabricante.equals(spinnerFabricantePos) && !mail.isEmpty()
                     || rm.isChecked() || rf.isChecked() || rn.isChecked()) {
-               if(user.length() >3 && user.length()<16 && password.length() >3 && password.length() < 11 && password.equals(RepContra) && Patterns.EMAIL_ADDRESS.matcher(mail).matches()){
-                   progressDialog.show();
-                   String finalGenero = genero;
-                   StringRequest request = new StringRequest(Request.Method.POST, "http://10.0.2.2/insertUsuario.php", new Response.Listener<String>() {
-                       @Override
-                       public void onResponse(String response) {
-                           if (response.equalsIgnoreCase("datos insertados")) {
-                               Intent intent = new Intent(getApplicationContext(), RegistroSatisfactorio.class);
-                               intent.putExtra("usuario", user);
-                               startActivity(intent);
-                               finish();
-                               progressDialog.dismiss();
-                           } else {
-                               Toast.makeText(getApplicationContext(), "no se guardó", Toast.LENGTH_LONG).show();
-                               progressDialog.dismiss();
-                           }
-                       }
-                   }, new Response.ErrorListener() {
-                       @Override
-                       public void onErrorResponse(VolleyError error) {
-                           Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
-                           progressDialog.dismiss();
-                       }
-                   }){
-                       @Nullable
-                       @Override
-                       protected Map<String, String> getParams() throws AuthFailureError {
-                           Map <String,String> params = new HashMap<String,String>();
-                           params.put("nombre",nombre);
-                           params.put("apellido",apellido);
-                           params.put("user",user);
-                           params.put("mail",mail);
-                           params.put("contra",password);
-                           params.put("genero", finalGenero);
-                           params.put("nacionalidad",spinnerNacion);
-                           params.put("fabricante",spinnerFabricante);
-                           return params;
-                       }
-                   };
-                   RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-                   requestQueue.add(request);
-               }
-               }
+                if(user.length() >3 && user.length()<16 && password.length() >3 && password.length() < 11 && password.equals(RepContra) && Patterns.EMAIL_ADDRESS.matcher(mail).matches()){
+                    progressDialog.show();
+                    String finalGenero = genero;
+                    StringRequest request = new StringRequest(Request.Method.POST, "http://10.0.2.2/insertUsuario.php", new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            if (response.equalsIgnoreCase("datos insertados")) {
+                                Intent intent = new Intent(getApplicationContext(), RegistroSatisfactorio.class);
+                                intent.putExtra("usuario", user);
+                                startActivity(intent);
+                                finish();
+                                progressDialog.dismiss();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "no se guardó", Toast.LENGTH_LONG).show();
+                                progressDialog.dismiss();
+                            }
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                            progressDialog.dismiss();
+                        }
+                    }){
+                        @Nullable
+                        @Override
+                        protected Map<String, String> getParams() throws AuthFailureError {
+                            Map <String,String> params = new HashMap<String,String>();
+                            params.put("nombre",nombre);
+                            params.put("apellido",apellido);
+                            params.put("user",user);
+                            params.put("mail",mail);
+                            params.put("contra",password);
+                            params.put("genero", finalGenero);
+                            params.put("nacionalidad",spinnerNacion);
+                            params.put("fabricante",spinnerFabricante);
+                            return params;
+                        }
+                    };
+                    RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+                    requestQueue.add(request);
+                }
             }
-
     }
-            //El insert a la base de datos
 
-
+}
 
 
 
