@@ -16,7 +16,6 @@ import com.example.proyectofinalm13.R;
 public class pantallaCoches extends AppCompatActivity {
     private Spinner spinnerMarca;
     private ImageView IvBack, Ivcoches;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +45,6 @@ public class pantallaCoches extends AppCompatActivity {
         spinnerMarca.setAdapter(adaptadorMarca);
 
     }
-
     private void mostrarDialogo() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Selecciona una opción")
@@ -68,7 +66,6 @@ public class pantallaCoches extends AppCompatActivity {
                 })
                 .show();
     }
-
     private void abrirActivity() {
         // Acción a realizar al seleccionar "Ir a la siguiente pantalla
         Intent intent = new Intent((getApplication()), ColeccionesAnadirCoche.class);

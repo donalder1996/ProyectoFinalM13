@@ -202,8 +202,7 @@ public class ActivityOlvidar extends AppCompatActivity {
             RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
             requestQueue.add(request);
         }
-        }
-
+    }
 
 
     private void mostrarDialogo() {
